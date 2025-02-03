@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import AuthService from "./services/auth.js";
+import ClientService from "./services/clients.js"
 import { h } from "vue";
 
 const baseURL = "http://localhost:3000/api"
@@ -62,4 +63,5 @@ httpClient.interceptors.response.use(
 
 export default {
   auth: AuthService(httpClient),
+  client: ClientService(httpClient)
 };

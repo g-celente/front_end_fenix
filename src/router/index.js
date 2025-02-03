@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/auth/LoginView.vue'
 import HomeView from '../views/HomeView.vue'
+import ClientsView from '@/views/ClientsView.vue'
+import UserView from '@/views/UserView.vue'
 import beforeEach from './beforeEach.js'
+import TheContainer from '@/components/TheContainer.vue'
 
 
 const router = createRouter({
@@ -15,8 +18,25 @@ const router = createRouter({
     {
         path: '/home',
         name: 'home',
-        component: HomeView,
-        meta: { requiresAuth: true }    
+        component: TheContainer,
+        meta: { requiresAuth: true },
+        children: [
+          {
+            path: "",
+            name: 'Home',
+            component: HomeView
+          },
+          {
+            path: "/clientes",
+            name: 'Clientes',
+            component: ClientsView
+          }, 
+          {
+            path: "/cliente/:id",
+            name: "Cliente",
+            component: UserView
+          }
+        ]   
     }
     /*
     {
