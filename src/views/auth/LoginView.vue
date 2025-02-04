@@ -83,14 +83,10 @@ const handleSubmit = async () => {
             </span>
           </div>
           <button @click="handleSubmit" class="btn primary">Entrar</button>
-          <button class="btn secondary">
-            <img src="../assets/img/google.svg" alt="img" class="icon" />
-            Entrar com Google
-          </button>
         </div>
         <!-- Lado direito -->
         <div class="card-right">
-          <img src="@/assets/imgs/image.jpg" alt="img" class="image" />
+          <img src="@/assets/imgs/Logo Fênix Tintas.jpg" alt="img" class="image" />
         </div>
       </div>
     </div>
@@ -101,8 +97,7 @@ const handleSubmit = async () => {
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #fff;
+  background-color: #252B5A;
 }
 
 .card {
@@ -111,6 +106,9 @@ const handleSubmit = async () => {
   background-color: white;
   box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
+  margin-top: 40px;
+  margin-bottom: 158px;
+  padding: 50px;
 }
 
 @media (min-width: 768px) {
@@ -209,18 +207,6 @@ const handleSubmit = async () => {
   background-color: white;
   color: black;
   border: 1px solid #d1d5db;
-}
-
-.btn.secondary {
-  border: 1px solid #d1d5db;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-}
-
-.btn.secondary:hover {
-  background-color: black;
-  color: white;
 }
 
 .icon {

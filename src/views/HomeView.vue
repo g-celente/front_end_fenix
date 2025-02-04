@@ -82,42 +82,42 @@ onMounted(async () => {
   <div class="page-background">
     <div class="main-content" v-if="!loading || dashboardData">
       <!-- Dashboard Cards -->
-    <div class="dashboard-cards">
-      <div class="card">
-        <h3>Total de Clientes</h3>
-        <p>{{ dashboardData.totalClients }}</p>
+      <div class="dashboard-cards">
+        <div class="card">
+          <h3>Total de Clientes</h3>
+          <p>{{ dashboardData.totalClients }}</p>
+        </div>
+        <div class="card">
+          <h3>Orçamentos Feitos</h3>
+          <p>{{ dashboardData.clientsWithBudgets }}</p>
+        </div>
+        <div class="card">
+          <h3>Clientes Recomendados</h3>
+          <p>{{ dashboardData.clientsWithRecommender }}</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Orçamentos Feitos</h3>
-        <p>{{ dashboardData.clientsWithBudgets }}</p>
-      </div>
-      <div class="card">
-        <h3>Clientes Recomendados</h3>
-        <p>{{ dashboardData.clientsWithRecommender }}</p>
-      </div>
-    </div>
-      <div class="page-container w-100">
-        <div class="charts">
-          <span style="font-weight: 600">Conversão de Clientes</span>
-          <div v-if="dashboardData && chartDataConversion">
-            <PieChart :data="chartDataConversion" />
-            <span>
-              <span style="font-weight: 600">Taxa de Conversão:</span>
-              {{ dashboardData.conversionRate.toFixed(2) }}%
-            </span>
+        <div class="page-container w-100">
+          <div class="charts">
+            <span style="font-weight: 600">Conversão de Clientes</span>
+            <div v-if="dashboardData && chartDataConversion">
+              <PieChart :data="chartDataConversion" />
+              <span>
+                <span style="font-weight: 600">Taxa de Conversão:</span>
+                {{ dashboardData.conversionRate.toFixed(2) }}%
+              </span>
+            </div>
+          </div>
+          <div class="charts">
+            <span style="font-weight: 600">Quantidade de Clientes por Mês</span>
+            <BarChart :data="dashboardData.clientsByMonthSerializable" />
           </div>
         </div>
-        <div class="charts">
-          <span style="font-weight: 600">Quantidade de Clientes por Mês</span>
-          <BarChart :data="dashboardData.clientsByMonthSerializable" />
-        </div>
+        <BaseClientTable/>
       </div>
-      <BaseClientTable/>
+      <div class="loading" v-else="loading">
+        <BaseLoading />
+      </div>
     </div>
-    <div class="loading" v-if="loading">
-      <BaseLoading />
-    </div>
-  </div>
 </template>
 
 <style scoped lang="scss">
