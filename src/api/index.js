@@ -4,7 +4,7 @@ import AuthService from "./services/auth.js";
 import ClientService from "./services/clients.js"
 import { h } from "vue";
 
-const baseURL = "http://localhost:3000/api"
+const baseURL = "https://api-fenix-tintas.onrender.com/api"
 
 const httpClient = axios.create({ baseURL });
 

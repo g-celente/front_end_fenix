@@ -12,7 +12,7 @@ import BaseNavbar from "@/components/navBar/BaseNavbar.vue";
           <!-- Navbar -->
           <BaseNavbar class="navbar" />
       
-          <div class="">
+          <div class="base-padding">
             <div class="background">
               <!-- O conteúdo da página será renderizado aqui -->
               <router-view class="view" />
@@ -40,9 +40,8 @@ import BaseNavbar from "@/components/navBar/BaseNavbar.vue";
 }
 
 .base-padding {
-  background-color: #aa3737;
+  background-color: #ffffff;
   padding: 2rem;
-  flex: 1;
   z-index: 0;
 }
 
